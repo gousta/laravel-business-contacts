@@ -2,9 +2,6 @@
 
 @push('actionbutton')
   <li>
-    <a href="{{ route('labor.index') }}"><i class="him-icon zmdi zmdi-assignment"></i></a>
-  </li>
-  <li>
     <a href="{{ route('client.create') }}"><i class="him-icon zmdi zmdi-account-add"></i></a>
   </li>
 @endpush

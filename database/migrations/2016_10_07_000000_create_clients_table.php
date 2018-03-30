@@ -22,11 +22,7 @@ class CreateClientsTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
 
-            $table->string('gender')->nullable();
-
             $table->text('notes')->nullable();
-
-            $table->date('birthday')->nullable();
 
             $table->timestamps();
         });

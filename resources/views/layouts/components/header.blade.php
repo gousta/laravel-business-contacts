@@ -1,4 +1,4 @@
-<header id="header" class="clearfix" data-ma-theme="pink">
+<header id="header" class="clearfix" data-ma-theme="indigo">
     <ul class="h-inner">
         {{-- <li class="hi-trigger ma-trigger" data-ma-action="sidebar-open" data-ma-target="#sidebar">
             <div class="line-wrap">
@@ -23,42 +23,9 @@
             <ul class="hi-menu">
                 @stack('actionbutton')
 
-                {{-- <li>
-                    <a href="{{ route('dye.create') }}"><i class="him-icon zmdi zmdi-brush"></i></a>
-                </li> --}}
-
-                {{-- <li>
-                    <a href="{{ route('catalog.index') }}"><span class="him-label">ΚΑΤΑΛΟΓΟΣ</span></a>
-                </li> --}}
-
-                {{-- <li>
-                    <a href="{{ route('client.index') }}"><i class="him-icon zmdi zmdi-account"></i></a>
-                </li> --}}
-
-                {{-- <li data-ma-action="search-open">
-                    <a href=""><i class="him-icon zmdi zmdi-search"></i></a>
-                </li> --}}
-
                 <li class="dropdown">
                     <a data-toggle="dropdown" href=""><i class="him-icon zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dm-icon pull-right">
-                        <li>
-                            <a href="{{ route('client.index') }}"><i class="him-icon zmdi zmdi-account"></i> Πελάτες</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('catalog.index') }}"><i class="him-icon zmdi zmdi-view-headline"></i> Κατάλογος</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('expense.index') }}"><i class="him-icon zmdi zmdi-money"></i> Έξοδα</a>
-                        </li>
-
-                        @if(Auth::user()->role === 'admin')
-                        <li>
-                            <a href="{{ route('stat.index') }}"><i class="him-icon zmdi zmdi-equalizer"></i> Σύνοψη</a>
-                        </li>
-                        @endif
-
-                        <li class="divider"></li>
                         <li>
                             <a href="{{ route('auth.logout') }}"><i class="him-icon zmdi zmdi-arrow-right"></i> Αποσύνδεση</a>
                         </li>

@@ -23,9 +23,7 @@ class Client extends Model
         'surname',
         'email',
         'phone',
-        'gender',
         'notes',
-        'birthday',
     ];
 
     /**
@@ -36,11 +34,6 @@ class Client extends Model
     protected $hidden = [
 
     ];
-
-    public function labor()
-    {
-        return $this->hasMany('App\Models\Labor', 'client_id', 'id');
-    }
 
     public function getNameAttribute($v)
     {
@@ -76,17 +69,7 @@ class Client extends Model
     {
         $this->attributes['phone'] = !empty($v) ? $v : null;
     }
-
-    public function getGenderAttribute($v)
-    {
-        return !empty($v) ? $v : null;
-    }
-
-    public function setGenderAttribute($v)
-    {
-        $this->attributes['gender'] = !empty($v) ? $v : null;
-    }
-
+    
     public function getNotesAttribute($v)
     {
         return !empty($v) ? $v : null;
@@ -95,24 +78,5 @@ class Client extends Model
     public function setNotesAttribute($v)
     {
         $this->attributes['notes'] = !empty($v) ? $v : null;
-    }
-
-    public function getBirthdayAttribute($v)
-    {
-        return !empty($v) ? $v : null;
-    }
-
-    public function setBirthdayAttribute($v)
-    {
-        $this->attributes['birthday'] = !empty($v) ? $v : null;
-    }
-
-    public function getGenderPrintAttribute($v)
-    {
-        switch ($this->gender) {
-            case 'male':   return 'Άνδρας'; break;
-            case 'female': return 'Γυναίκα'; break;
-            default:       return '-'; break;
-        }
     }
 }

@@ -49,38 +49,10 @@
         </div>
     </div>
 
-    <div class="row m-b-15">
-        <div class="col-xs-6 col-lg-2">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="gender" value="female" {{ !isset($client['gender']) || $client['gender'] === null || $client['gender'] === 'female' ? 'checked="checked"':'' }}>
-                    <i class="input-helper"></i>
-                    Γυναίκα
-                </label>
-            </div>
-        </div>
-        <div class="col-xs-6 col-lg-2">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="gender" value="male" {{ isset($client['gender']) && $client['gender'] === 'male' ? 'checked="checked"':'' }}>
-                    <i class="input-helper"></i>
-                    Άνδρας
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="fg-line">
-            <label for="birthday">ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</label>
-            <input id="birthday" type="text" name="birthday" class="form-control input-mask" data-mask="00/00/0000" placeholder="dd/mm/yyyy" value="{{ $client['birthday'] or '' }}" autocomplete="off">
-        </div>
-    </div>
-
     <div class="form-group">
         <div class="fg-line">
             <label for="notes">ΣΗΜΕΙΩΣΕΙΣ</label>
-            <textarea id="notes" class="form-control auto-size" name="notes" placeholder="...">{{ $client['notes'] or '' }}</textarea>
+            <textarea id="notes" rows="6" class="form-control auto-size" name="notes" placeholder="...">{{ $client['notes'] or '' }}</textarea>
         </div>
     </div>
 

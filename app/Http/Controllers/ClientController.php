@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Client\CreateRequest;
-use App\Http\Requests\Labor\CreateRequest as LaborCreateRequest;
-use App\Models\Catalog;
 use App\Models\Client;
-use App\Models\Labor;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -48,12 +45,8 @@ class ClientController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $request->merge(['role' => 'client']);
+        $request->merge(['role' => 'client']); // TODO: do I need this?
         $client = Client::create($request->all());
-
-        if (empty($client->id)) {
-            dump($client);
-        }
 
         return redirect()->route('client.show', $client->id)->with('status', $this->ok);
     }
@@ -70,13 +63,7 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
 
         return view('client.show', [
-            'client'     => $client,
-            'catalog'    => Catalog::popular()->get(),
-            'categories' => Catalog::orderBy('cat', 'desc')->distinct('cat')->pluck('cat'),
-            'labor'      => [
-                'today' => $client->labor()->with('item')->where('date', '=', date('Y-m-d'))->get(),
-                'old'   => $client->labor()->with('item')->where('date', '<', date('Y-m-d'))->orderBy('date', 'desc')->get(),
-            ],
+            'client' => $client,
         ]);
     }
 
@@ -122,41 +109,5 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function laborStore(LaborCreateRequest $request, $id)
-    {
-        $client = Client::findOrFail($id);
-        $client->labor()->create($request->all());
-
-        return redirect()->route('client.show', $client->id)->with('status', $this->ok);
-    }
-
-    public function laborDestroy(Request $request, $id, $lid)
-    {
-        $client = Client::findOrFail($id);
-        $client->labor()->where('id', '=', $lid)->delete();
-
-        return redirect()->route('client.show', $client->id)->with('status', $this->deleted);
-    }
-
-    public function laborEdit(Request $request, $id, $lid)
-    {
-        $client = Client::findOrFail($id);
-        $labor = $client->labor()->where('id', $lid)->first();
-
-        return view('client.labor.edit', [
-            'client' => $client,
-            'labor'  => $labor,
-        ]);
-    }
-
-    public function laborUpdate(Request $request, $id, $lid)
-    {
-        $client = Client::findOrFail($id);
-        $labor = Labor::find($lid)->update($request->all());
-
-        return redirect()->route('client.labor.edit', ['id' => $client->id, 'lid' => $lid])
-            ->with('status', $this->ok);
     }
 }
