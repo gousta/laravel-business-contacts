@@ -2,7 +2,7 @@
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CRM | Σύνδεση</title>
+  <title>Contacts | Σύνδεση</title>
 
   <!-- Mobile App Configuration -->
   @include('layouts.components.mobile')

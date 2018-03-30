@@ -1,5 +1,5 @@
 {
-  "name": "CRM",
+  "name": "Contacts",
   "icons": [
     {
       "src": "res/mipmap-mdpi/ic_launcher.png",
@@ -38,7 +38,7 @@
       "density": 4.0
     },
     {
-      "src": "web_hi_res_512.png",
+      "src": "favicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "density": 4.0
@@ -46,7 +46,7 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#E91E63",
-  "description": "CRM",
+  "background_color": "#283593",
+  "description": "Contacts",
   "orientation": "portrait-primary"
 }

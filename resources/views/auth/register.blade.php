@@ -2,7 +2,7 @@
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>CRM | Register</title>
+    <title>Contacts | Register</title>
 
     <!-- Mobile App Configuration -->
     @include('layouts.components.mobile')
@@ -22,7 +22,7 @@
     <div class="login-content bgm-indigo">
 
         <div class="lc-block toggled" id="l-login">
-            <h1 style="color:#fff;margin-bottom:20px">CRM</h1>
+            <h1 style="color:#fff;margin-bottom:20px">Contacts - Εγγραφή</h1>
 
             {!! Form::open(['url' => route('auth.register'), 'method' => 'POST']) !!}
                 <div class="lcb-form" style="padding:35px 25px 35px 25px">
