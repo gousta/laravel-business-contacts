@@ -141,7 +141,7 @@
     @endif
   </div>
 
-  <a data-toggle="modal" href="#modalMain" class="btn bgm-pink btn-icon ccta waves-effect">
+  <a data-toggle="modal" href="#modalMain" class="btn bgm-indigo btn-icon ccta waves-effect">
     <i class="zmdi zmdi-plus"></i>
   </a>
 

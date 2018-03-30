@@ -23,7 +23,7 @@
 <body class="bgm-white">
 
   <div class="mdnsign">
-    <div class="mdnhead bgm-pink">
+    <div class="mdnhead bgm-indigo">
       <div class="mdnheadinner">
         <div class="mdntitle">
           <div class="c-white f-s-20">Σύνδεση</div>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="text-right">
-              <button class="btn bgm-pink btn-lg waves-effect">ΕΠΟΜΕΝΟ</button>
+              <button class="btn bgm-indigo btn-lg waves-effect">ΕΠΟΜΕΝΟ</button>
             </div>
           {!! Form::close() !!}
         </div>
